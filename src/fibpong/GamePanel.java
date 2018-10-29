@@ -88,7 +88,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        
         if(pt.rebateu(player.getX(), player.getY(),player.getHeight(),player.getWidth())){
             pontos++;
             if(countFaca == 2){
