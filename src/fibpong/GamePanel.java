@@ -71,7 +71,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP)
             player.moveUp();
-        if (e.getKeyCode() == KeyEvent.VK_DOWN)
+        else if (e.getKeyCode() == KeyEvent.VK_DOWN)
             player.moveDown();
     }
     @Override
@@ -82,13 +82,13 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
     public void keyTyped(KeyEvent e) {    
     }
     public void startTimer(){
-        timer = new Timer(10,this);
+        timer = new Timer(45,this);
         timer.start();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         if(pt.rebateu(player.getX(), player.getY(),player.getHeight(),player.getWidth())){
             pontos++;
             if(countFaca == 2){

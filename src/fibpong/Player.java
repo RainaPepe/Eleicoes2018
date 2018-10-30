@@ -37,7 +37,7 @@ public class Player {
     public void move(){
         if (up)
             y-=speed;
-        if (down)
+        else if (down)
             y+=speed;
     }
     public void stop(){
