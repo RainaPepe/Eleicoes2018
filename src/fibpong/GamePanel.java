@@ -18,9 +18,12 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
     private Timer timer;
     private boolean gameover;
     private int pontos, vidas;
-
+    private JButton reload;
     ImageIcon fundo = new ImageIcon(getClass().getResource("/images/fundo.jpg"));
     ImageIcon imgGameOver = new ImageIcon(getClass().getResource("/images/gameover1.png"));
+    ImageIcon imgVida = new ImageIcon(getClass().getResource("/images/coracao.png"));
+    ImageIcon imgReload = new ImageIcon(getClass().getResource("/images/reset.png"));
+    ImageIcon imgScore = new ImageIcon(getClass().getResource("/images/score.png"));
 
     public GamePanel(){
         gameover = false;
@@ -56,11 +59,15 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
         g2d.fillRect(20,0,10, getHeight());
         g2d.setColor(Color.BLACK);
         g2d.drawString("Pontos: " + pontos, getWidth() - 200,  getHeight()-100);
-        g2d.drawString("Vidas: " + vidas, 150,  20);
-
-        if(gameover)
-            g2d.drawImage(imgGameOver.getImage(),(getWidth()/2 )- 100,(getHeight()/2)-100, 200, 200, null);
-
+        int esp = 300;
+        for(int i = 0; i < vidas ;i++) {
+            g2d.drawImage(imgVida.getImage(), esp, 15, 40, 30, null);
+            esp += 50;
+        }
+        if(gameover) {
+            g2d.drawImage(imgGameOver.getImage(), (getWidth() / 2) - 70, (getHeight() / 2) - 100, 200, 200, null);
+            g2d.drawImage(imgReload.getImage(), (getWidth() / 2) - 200, (getHeight() / 2) - 50, 100, 100, null);
+        }
         player.draw(g2d);
         pt.draw(g2d);
         for (Ball faca : facas) {
