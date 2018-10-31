@@ -89,7 +89,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
     public void keyTyped(KeyEvent e) {    
     }
     public void startTimer(){
-        timer = new Timer(45,this);
+        timer = new Timer(3,this);
         timer.start();
     }
 
