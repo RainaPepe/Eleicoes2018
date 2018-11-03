@@ -1,4 +1,5 @@
 package fibpong;
+import java.awt.*;
 import java.util.ArrayList;
 //import javafx.util.Pair;
 
@@ -11,6 +12,7 @@ public class FIBPong {
         /*ArrayList<Pair> records = PongDB.getRecords();
         for (Pair p : records)
             System.out.println(p);*/
+        Toolkit.getDefaultToolkit().sync();
         new GameFrame();
     }
 }

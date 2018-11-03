@@ -73,6 +73,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
         for (Ball faca : facas) {
             faca.draw(g2d);
         }
+
+        Toolkit.getDefaultToolkit().sync();
     }
     @Override
     public void keyPressed(KeyEvent e) {
